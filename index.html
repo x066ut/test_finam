@@ -1,0 +1,28 @@
+<html>
+<head>
+<!-- finam StoreStocks widget library 1.0 --> 
+<link rel="stylesheet" type="text/css" href="http://www.finam.ru/net/statica/styles/store-stocks/store-stocks-implements.css">
+<script type="text/javascript" src="http://www.finam.ru/net/statica/scripts/store-stocks/store-stocks-implement.js"></script>
+<script type="text/javascript">
+var finam_storestocks_utms = {
+    "utm_source":"shop.vaseev.com",
+    "utm_medium":"button",
+    "utm_campaign":"buy_stock",
+    "agent": "EC799AE2-3C39-4225-93BD-5D8BDB0D6BD7", 
+    "agencyID": "1"
+};
+console.log(finam_storestocks_utms);
+//finam StoreStocks widget init
+window.onload = function () {
+    finam_store_stocks_widget_init();
+};
+// end finam StoreStocks widget
+</script>
+</head>
+
+<body>
+    <br><br>
+    <button class="finam_widget_caller" finamid="3">Покупка акций сбербанк</button> 
+</body>
+
+</html>
