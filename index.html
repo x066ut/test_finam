@@ -1,43 +1,32 @@
 <html>
+
 <head>
     <script src="https://e-commerce.raiffeisen.ru/pay/sdk/v2/payment.styled.min.js"></script>
+    <link rel="stylesheet" href="https://e-commerce.raiffeisen.ru/pay/sdk/v2/payment.min.css">
+    
 </head>
 
+<body>
+<div class="layout">
 <script>
-const paymentPage = new PaymentPageSdk('000001680200002-80200002', {
-        url: 'https://test.ecom.raiffeisen.ru/pay'
-    });
-</script>
-<script>
-paymentPage.openWindow({
-    amount: 10.10,
-    orderId: '91700',
-    successUrl: 'https://www.raiffeisen.ru',
-    failUrl: 'https://e-commerce.raiffeisen.ru/pay/demo.html',
-    extra: {
-        email: 'test@test.ru',
-        login: 'testLogin',
-        phone: '79191234567'
-    },
+    const payment = new PaymentPageSdk('000001680200002-80200002', {
+    url: 'https://test.ecom.raiffeisen.ru/pay/'
+});
+
+payment.openPopup({
+    amount: 10.00,
+    comment: 'Благотворительное пожертвование',
+    locale: 'ru',
+    paymentMethod: 'ONLY_SBP',
     style: {
         button: {
-            backgroundColor: '#ffc800',
-            textColor: '#542595',
-            hoverTextColor: '#ffc800',
-            hoverBackgroundColor: '#542595',
-            borderRadius: '3px'
+            borderRadius: '7px',
         },
-        header: {
-            logo: 'https://www.raiffeisen.ru/common/new/images/logo-raif.svg',
-            titlePlace: 'RIGHT'
-        }
-    },
-    comment: 'Тирольский пирог с яблоками, грушами, ветчиной, сыром, ананасами, 50см'
+    }
 });
 </script>
-<body>
-   
-    
+</div>
+
 </body>
 
 </html>
