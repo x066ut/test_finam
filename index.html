@@ -1,28 +1,43 @@
 <html>
 <head>
-<!-- finam StoreStocks widget library 1.0 --> 
-<link rel="stylesheet" type="text/css" href="https://www.finam.ru/net/statica/styles/store-stocks/store-stocks-implements.css">
-<script type="text/javascript" src="https://www.finam.ru/net/statica/scripts/store-stocks/store-stocks-implement.js"></script>
-<script type="text/javascript">
-var finam_storestocks_utms = {
-    "utm_source":"shop.vaseev.com",
-    "utm_medium":"button",
-    "utm_campaign":"buy_stock",
-    "agent": "EC799AE2-3C39-4225-93BD-5D8BDB0D6BD7", 
-    "agencyID": "1"
-};
-console.log(finam_storestocks_utms);
-//finam StoreStocks widget init
-window.onload = function () {
-    finam_store_stocks_widget_init();
-};
-// end finam StoreStocks widget
-</script>
+    <script src="https://e-commerce.raiffeisen.ru/pay/sdk/v2/payment.styled.min.js"></script>
 </head>
 
+<script>
+const paymentPage = new PaymentPageSdk('000001680200002-80200002', {
+        url: 'https://test.ecom.raiffeisen.ru/pay'
+    });
+</script>
+<script>
+paymentPage.openWindow({
+    amount: 10.10,
+    orderId: '91700',
+    successUrl: 'https://www.raiffeisen.ru',
+    failUrl: 'https://e-commerce.raiffeisen.ru/pay/demo.html',
+    extra: {
+        email: 'test@test.ru',
+        login: 'testLogin',
+        phone: '79191234567'
+    },
+    style: {
+        button: {
+            backgroundColor: '#ffc800',
+            textColor: '#542595',
+            hoverTextColor: '#ffc800',
+            hoverBackgroundColor: '#542595',
+            borderRadius: '3px'
+        },
+        header: {
+            logo: 'https://www.raiffeisen.ru/common/new/images/logo-raif.svg',
+            titlePlace: 'RIGHT'
+        }
+    },
+    comment: 'Тирольский пирог с яблоками, грушами, ветчиной, сыром, ананасами, 50см'
+});
+</script>
 <body>
-    <br><br>
-    <button class="finam_widget_caller" finamid="3">Покупка акций сбербанк</button> 
+   
+    
 </body>
 
 </html>
